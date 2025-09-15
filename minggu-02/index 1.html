@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Program Membalikkan String</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            margin: 50px;
+        }
+        input, button {
+            padding: 8px;
+            font-size: 16px;
+        }
+        h2 {
+            margin-top: 20px;
+        }
+    </style>
+</head>
+<body>
+    <h1>Program Membalikkan Urutan String</h1>
+    <input type="text" id="inputString" placeholder="Masukkan kata">
+    <button onclick="balikkanString()">Balikkan</button>
+
+    <h2>Hasil:</h2>
+    <p id="hasil"></p>
+
+    <script>
+        function balikkanString() {
+            let teks = document.getElementById("inputString").value;
+            let hasil = teks.split("").reverse().join("");
+            document.getElementById("hasil").innerText = hasil;
+        }
+    </script>
+</body>
+</html>
