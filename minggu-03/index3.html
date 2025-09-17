@@ -1,0 +1,103 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>✨ Simulasi Antrian Loket ✨</title>
+  <link rel="stylesheet" href=".css">
+  <style>
+    /* Tambahan biar langsung kelihatan aesthetic */
+    body {
+      font-family: 'Poppins', sans-serif;
+      background: linear-gradient(135deg, #ffe6f0, #e6ccff);
+      color: #4a2c4d;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      min-height: 100vh;
+      margin: 0;
+    }
+
+    .container {
+      background: #fff0f6;
+      border-radius: 20px;
+      box-shadow: 0 8px 20px rgba(0,0,0,0.1);
+      padding: 30px;
+      width: 90%;
+      max-width: 450px;
+      text-align: center;
+    }
+
+    h1 {
+      font-size: 1.8rem;
+      margin-bottom: 20px;
+      color: #b30059;
+    }
+
+    input {
+      width: 80%;
+      padding: 10px;
+      border: 2px solid #ffb3d9;
+      border-radius: 15px;
+      outline: none;
+      margin-bottom: 15px;
+      font-size: 1rem;
+    }
+
+    input:focus {
+      border-color: #cc66ff;
+      box-shadow: 0 0 5px #cc66ff;
+    }
+
+    button {
+      background: #ff80bf;
+      color: white;
+      border: none;
+      border-radius: 15px;
+      padding: 10px 15px;
+      margin: 5px;
+      cursor: pointer;
+      font-size: 1rem;
+      transition: all 0.3s ease;
+    }
+
+    button:hover {
+      background: #cc66ff;
+      transform: scale(1.05);
+    }
+
+    h3 {
+      margin-top: 25px;
+      color: #732673;
+    }
+
+    #daftarAntrian, #status {
+      background: #fff;
+      border-radius: 12px;
+      padding: 15px;
+      margin-top: 10px;
+      min-height: 40px;
+      font-size: 0.95rem;
+      color: #4a2c4d;
+      border: 1px solid #ffccf2;
+    }
+  </style>
+</head>
+<body>
+  <div class="container">
+    <h1>✨ Simulasi Antrian Loket ✨</h1>
+
+    <input type="text" id="namaInput" placeholder="Masukkan Nama Cantikmu 💖">
+    <br>
+    <button onclick="tambahAntrian()">➕ Tambah Antrian</button>
+    <button onclick="layaniAntrian()">💁 Layani Antrian</button>
+
+    <h3>🌸 Daftar Antrian 🌸</h3>
+    <div id="daftarAntrian">Belum ada antrian</div>
+
+    <h3>📢 Status</h3>
+    <div id="status"></div>
+  </div>
+  <script src="3.js"></script>
+</body>
+</html>

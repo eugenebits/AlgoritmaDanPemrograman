@@ -1,0 +1,75 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+  <meta charset="UTF-8">
+  <title>Simulasi Antrian Loket</title>
+  <style>
+    body {
+      font-family: Arial, sans-serif;
+      margin: 40px;
+      text-align: center;
+    }
+    .queue-box {
+      margin: 20px auto;
+      padding: 20px;
+      border: 2px solid #333;
+      border-radius: 10px;
+      width: 300px;
+      background-color: #f9f9f9;
+    }
+    button {
+      margin: 10px;
+      padding: 10px 20px;
+      font-size: 16px;
+      border: none;
+      border-radius: 8px;
+      cursor: pointer;
+    }
+    .add-btn { background-color: #4CAF50; color: white; }
+    .call-btn { background-color: #2196F3; color: white; }
+    .reset-btn { background-color: #f44336; color: white; }
+  </style>
+</head>
+<body>
+<h1>Sistem Antrian Loket</h1>
+
+  <div class="queue-box">
+    <p id="current">Nomor Antrian: -</p>
+    <p id="total">Total Antrian: 0</p>
+  </div>
+
+  <button class="add-btn" onclick="tambahAntrian()">Tambah Antrian</button>
+  <button class="call-btn" onclick="panggilAntrian()">Panggil Antrian</button>
+  <button class="reset-btn" onclick="resetAntrian()">Reset</button>
+
+  <script>
+    let antrian = [];
+    let nomor = 0;
+
+    function tambahAntrian() {
+      nomor++;
+      antrian.push(nomor);
+      document.getElementById("total").innerText = "Total Antrian: " + antrian.length;
+      alert("Nomor Antrian Anda: " + nomor);
+    }
+
+    function panggilAntrian() {
+      if (antrian.length === 0) {
+        alert("Tidak ada antrian.");
+      } else {
+        let panggil = antrian.shift();
+        document.getElementById("current").innerText = "Nomor Antrian: " + panggil;
+        document.getElementById("total").innerText = "Total Antrian: " + antrian.length;
+      }
+    }
+
+    function resetAntrian() {
+      antrian = [];
+      nomor = 0;
+  document.getElementById("current").innerText = "Nomor Antrian: -";
+      document.getElementById("total").innerText = "Total Antrian: 0";
+    }
+  </script>
+
+</body>
+</html>
