@@ -5,86 +5,107 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>Tugas Algoritma dan Pemrograman</title>
   <style>
-    @import url('https://fonts.googleapis.com/css2?family=Roboto:wght@400;600&display=swap');
+    @import url('https://fonts.googleapis.com/css2?family=Inter:wght@400;600;700&display=swap');
 
     body {
-      font-family: 'Roboto', sans-serif;
-      background: linear-gradient(135deg, #0a0a0a, #1a1f3b);
-      color: #e0e6f0;
+      font-family: 'Inter', sans-serif;
+      background: linear-gradient(135deg, #0d1b2a, #1b263b, #415a77);
+      color: #e0e6ed;
       margin: 0;
       padding: 0;
       display: flex;
       justify-content: center;
-      align-items: center;
+      align-items: flex-start;
       min-height: 100vh;
     }
 
     .container {
-      background: #111827;
-      padding: 30px 40px;
-      border-radius: 16px;
-      box-shadow: 0 8px 25px rgba(0,0,0,0.6);
+      background: rgba(17, 25, 40, 0.9);
+      backdrop-filter: blur(12px);
+      padding: 35px 40px;
+      border-radius: 18px;
+      box-shadow: 0 8px 30px rgba(0,0,0,0.5);
       width: 90%;
-      max-width: 600px;
+      max-width: 650px;
+      margin: 50px auto;
     }
 
     h1 {
       text-align: center;
-      font-size: 1.8rem;
-      margin-bottom: 15px;
-      color: #60a5fa; /* biru */
+      font-size: 1.9rem;
+      margin-bottom: 10px;
+      color: #4dabf7;
+    }
+
+    .quote {
+      text-align: center;
+      font-style: italic;
+      font-size: 0.95rem;
+      margin-bottom: 25px;
+      color: #a5b4c7;
     }
 
     p {
       font-size: 1rem;
       margin: 5px 0;
-      color: #d1d5db;
+      color: #e5eaf0;
     }
 
     strong {
-      color: #93c5fd; /* biru soft */
+      color: #74c0fc;
     }
 
     h2 {
       margin-top: 25px;
       margin-bottom: 15px;
       font-size: 1.3rem;
-      color: #3b82f6;
-      border-bottom: 2px solid #3b82f6;
-      padding-bottom: 5px;
+      color: #4dabf7;
+      border-bottom: 2px solid #4dabf7;
+      padding-bottom: 6px;
     }
 
     ul {
       list-style: none;
       padding: 0;
+      margin: 0;
     }
 
     li {
-      margin: 10px 0;
+      margin: 12px 0;
     }
 
     a {
-      display: block;
-      background: #1f2937;
-      padding: 12px 16px;
-      border-radius: 10px;
-      color: #e0e6f0;
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      background: #1e293b;
+      padding: 12px 18px;
+      border-radius: 12px;
+      color: #e2e8f0;
       text-decoration: none;
       transition: all 0.3s ease;
       border: 1px solid transparent;
+      font-size: 0.95rem;
     }
 
     a:hover {
       background: #2563eb;
-      color: white;
-      transform: translateX(5px);
+      color: #ffffff;
+      transform: translateY(-2px);
       border: 1px solid #60a5fa;
+    }
+
+    a::after {
+      content: "➝";
+      font-size: 1rem;
+      color: inherit;
     }
   </style>
 </head>
 <body>
   <div class="container">
     <h1>Tugas Algoritma dan Pemrograman</h1>
+    <p class="quote">“Konsistensi kecil hari ini bisa jadi hasil besar di masa depan.”</p>
 
     <p>Nama: <strong>EUGENIA FEBITA</strong></p>
     <p>NIM: <strong>31240003</strong></p>
