@@ -1,0 +1,20 @@
+
+buku = [
+    "Laskar Pelangi",
+    "Negeri 5 Menara",
+    "Bumi Manusia",
+    "Sang Pemimpi",
+    "Ayat-Ayat Cinta"
+]
+
+cari = input("Masukkan judul buku yang ingin dicari: ")
+
+ditemukan = False
+for i in range(len(buku)):
+    if buku[i].lower() == cari.lower():  # biar tidak sensitif huruf besar/kecil
+        print(f"Buku '{cari}' ditemukan di posisi index {i}")
+        ditemukan = True
+        break
+
+if not ditemukan:
+    print(f"Buku '{cari}' tidak ditemukan dalam daftar")
