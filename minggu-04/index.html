@@ -1,20 +1,123 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Pencarian Judul Buku</title>
+  <style>
+    body {
+      font-family: Arial, sans-serif;
+      background: linear-gradient(135deg, #1e3c72, #2a5298);
+      color: #fff;
+      text-align: center;
+      padding: 40px;
+    }
+    h2 {
+      margin-bottom: 20px;
+    }
+    .container {
+      background: rgba(255, 255, 255, 0.1);
+      padding: 20px;
+      border-radius: 15px;
+      width: 400px;
+      margin: auto;
+      box-shadow: 0px 4px 10px rgba(0,0,0,0.3);
+    }
+    ul {
+      text-align: left;
+      padding-left: 20px;
+    }
+    input {
+      padding: 10px;
+      border: none;
+      border-radius: 8px;
+      width: 70%;
+      margin-bottom: 10px;
+    }
+    button {
+      padding: 10px 15px;
+      border: none;
+      border-radius: 8px;
+      background: #ff9800;
+      color: #fff;
+      cursor: pointer;
+      transition: 0.3s;
+      margin: 5px;
+    }
+    button:hover {
+      background: #e68900;
+      transform: scale(1.05);
+    }
+    #hasil {
+      margin-top: 15px;
+      font-weight: bold;
+    }
+  </style>
+</head>
+<body>
+  <h2>Pencarian Judul Buku</h2>
+<h3> STIKES Panti Waluya Malang</h3>
+  <div class="container">
+    <p><strong>Daftar Buku:</strong></p>
+    <ul id="daftarBuku"></ul>
 
-buku = [
-    "Laskar Pelangi",
-    "Negeri 5 Menara",
-    "Bumi Manusia",
-    "Sang Pemimpi",
-    "Ayat-Ayat Cinta"
-]
+    <input type="text" id="inputCari" placeholder="Masukkan judul buku">
+    <button onclick="cariBuku()">Cari</button>
+    <p id="hasil"></p>
 
-cari = input("Masukkan judul buku yang ingin dicari: ")
+    <hr style="margin: 20px 0; border: 1px solid #fff3;">
+    <p><strong>Tambah Buku Baru:</strong></p>
+    <input type="text" id="inputTambah" placeholder="Judul buku baru">
+    <button onclick="tambahBuku()">➕ Tambah</button>
+  </div>
 
-ditemukan = False
-for i in range(len(buku)):
-    if buku[i].lower() == cari.lower():  # biar tidak sensitif huruf besar/kecil
-        print(f"Buku '{cari}' ditemukan di posisi index {i}")
-        ditemukan = True
-        break
+  <script>
 
-if not ditemukan:
-    print(f"Buku '{cari}' tidak ditemukan dalam daftar")
+    let buku = ["Laskar Pelangi", "Negeri 5 Menara", "Bumi Manusia", "Sang Pemimpi", "Ayat-Ayat Cinta"];
+
+
+    function tampilkanBuku() {
+      let daftar = document.getElementById("daftarBuku");
+      daftar.innerHTML = ""; // reset isi
+      buku.forEach((judul, index) => {
+        let li = document.createElement("li");
+        li.textContent = `[Index ${index}] ${judul}`;
+        daftar.appendChild(li);
+      });
+    }
+    tampilkanBuku();
+
+
+    function cariBuku() {
+      let cari = document.getElementById("inputCari").value;
+      let hasil = document.getElementById("hasil");
+      let ditemukan = false;
+
+      for (let i = 0; i < buku.length; i++) {
+        if (buku[i].toLowerCase() === cari.toLowerCase()) {
+          hasil.textContent = `✅ Buku "${cari}" ditemukan di index ${i}`;
+          hasil.style.color = "#00ff88";
+          ditemukan = true;
+          break;
+        }
+      }
+
+      if (!ditemukan) {
+        hasil.textContent = `❌ Buku "${cari}" tidak ditemukan`;
+        hasil.style.color = "#ff4d4d";
+      }
+    }
+
+
+    function tambahBuku() {
+      let tambah = document.getElementById("inputTambah").value;
+      if (tambah.trim() !== "") {
+        buku.push(tambah);
+        tampilkanBuku();
+        document.getElementById("inputTambah").value = "";
+        alert(`Buku "${tambah}" berhasil ditambahkan!`);
+      }
+    }
+  </script>
+</body>
+</html>
