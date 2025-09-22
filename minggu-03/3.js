@@ -1,12 +1,12 @@
-// antrian disimpan di array
+
 let antrian = [];
 
-// ambil elemen
+
 const inputNama = document.getElementById("namaInput");
 const daftarAntrian = document.getElementById("daftarAntrian");
 const statusBox = document.getElementById("status");
 
-// fungsi buat update tampilan daftar antrian
+
 function updateDaftarAntrian() {
   if (antrian.length === 0) {
     daftarAntrian.innerHTML = "Belum ada antrian 🌸";
@@ -18,7 +18,7 @@ function updateDaftarAntrian() {
       div.classList.add("antrian-item");
       daftarAntrian.appendChild(div);
 
-      // animasi fade in tiap kali update
+  
       setTimeout(() => {
         div.classList.add("show");
       }, 50);
@@ -26,7 +26,7 @@ function updateDaftarAntrian() {
   }
 }
 
-// fungsi buat tambah antrian
+
 function tambahAntrian() {
   const nama = inputNama.value.trim();
   if (nama === "") {
@@ -43,7 +43,7 @@ function tambahAntrian() {
   updateDaftarAntrian();
 }
 
-// fungsi buat layani antrian
+
 function layaniAntrian() {
   if (antrian.length === 0) {
     statusBox.textContent = "🙅‍♀️ Antrian kosong, gaada yg bisa dilayanin!";
@@ -58,7 +58,6 @@ function layaniAntrian() {
   updateDaftarAntrian();
 }
 
-// kasih animasi cantik ke item antrian
 const style = document.createElement("style");
 style.innerHTML = `
   .antrian-item {
