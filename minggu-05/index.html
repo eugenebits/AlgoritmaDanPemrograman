@@ -1,0 +1,71 @@
+<!doctype html>
+<html lang="id">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width,initial-scale=1" />
+  <title>Pencarian Kata - Binary Search</title>
+  <style>
+    body {
+      font-family: Arial, sans-serif;
+      background: linear-gradient(135deg, #0f172a, #1e293b);
+      color: #f1f5f9;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      height: 100vh;
+      margin: 0;
+    }
+    .container {
+      background: #1e293b;
+      padding: 20px;
+      border-radius: 12px;
+      box-shadow: 0 6px 16px rgba(0,0,0,0.5);
+      width: 320px;
+      text-align: center;
+    }
+    h1 {
+      font-size: 18px;
+      margin-bottom: 12px;
+    }
+    input {
+      width: 100%;
+      padding: 10px;
+      margin-bottom: 12px;
+      border-radius: 8px;
+      border: none;
+      outline: none;
+    }
+    button {
+      background: #06b6d4;
+      border: none;
+      padding: 10px 14px;
+      border-radius: 8px;
+      color: #0f172a;
+      font-weight: bold;
+      cursor: pointer;
+      transition: 0.2s;
+      width: 100%;
+    }
+    button:hover {
+      background: #0891b2;
+    }
+    .result {
+      margin-top: 14px;
+      font-weight: bold;
+    }
+    .found { color: #22c55e; }
+    .notfound { color: #ef4444; }
+  </style>
+</head>
+<body>
+  <div class="container">
+    <h1>Pencarian Kata (Binary Search)</h1>
+    <input id="searchInput" type="text" placeholder="Masukkan kata, contoh: kelapa" />
+    <button onclick="searchWord()">Cari Kata</button>
+    <div id="result" class="result"></div>
+  </div>
+
+  <!-- Panggil file JavaScript -->
+  <script src="script.js"></script>
+</body>
+</html>
