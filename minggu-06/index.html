@@ -1,0 +1,96 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Bubble Sort Sederhana</title>
+  <style>
+    body {
+      font-family: Arial, sans-serif;
+      background: linear-gradient(135deg, #f0f0f0, #dcdcdc);
+      color: #333;
+      text-align: center;
+      padding: 40px;
+    }
+    h1 {
+      color: #0077b6;
+    }
+    input, button {
+      padding: 8px 12px;
+      margin: 5px;
+      border-radius: 6px;
+      border: 1px solid #ccc;
+    }
+    button {
+      background-color: #0077b6;
+      color: white;
+      cursor: pointer;
+    }
+    button:hover {
+      background-color: #005f86;
+    }
+    pre {
+      background-color: #fff;
+      padding: 15px;
+      border-radius: 8px;
+      display: inline-block;
+      text-align: left;
+      margin-top: 20px;
+    }
+  </style>
+</head>
+<body>
+  <h1>Program Bubble Sort (JavaScript)</h1>
+  <h2>STIKES Panti Waluya Malang</h2>
+
+  <p>Masukkan angka (pisahkan dengan koma):</p>
+  <input type="text" id="inputArray" placeholder="contoh: 5,3,8,4,2" />
+  <button onclick="jalankanBubbleSort()">Urutkan</button>
+
+  <pre id="output"></pre>
+
+  <script>
+    function bubbleSort(arr) {
+      let n = arr.length;
+      let swapped;
+      do {
+        swapped = false;
+        for (let i = 0; i < n - 1; i++) {
+          if (arr[i] > arr[i + 1]) {
+            let temp = arr[i];
+            arr[i] = arr[i + 1];
+            arr[i + 1] = temp;
+            swapped = true;
+          }
+        }
+        n--;
+      } while (swapped);
+      return arr;
+    }
+
+    function jalankanBubbleSort() {
+      let input = document.getElementById("inputArray").value;
+      if (!input) {
+        alert("Masukkan angka terlebih dahulu!");
+        return;
+      }
+
+      // Ubah input jadi array angka
+      let array = input.split(",").map(Number);
+
+      let output = document.getElementById("output");
+      output.textContent = "Array sebelum diurutkan:\n";
+      for (let i = 0; i < array.length; i++) {
+        output.textContent += `Index ${i} = ${array[i]}\n`;
+      }
+
+      let sortedArray = bubbleSort(array);
+
+      output.textContent += "\nArray setelah diurutkan:\n";
+      for (let i = 0; i < sortedArray.length; i++) {
+        output.textContent += `Index ${i} = ${sortedArray[i]}\n`;
+      }
+    }
+  </script>
+</body>
+</html>
